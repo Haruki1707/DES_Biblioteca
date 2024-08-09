@@ -8,8 +8,10 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Entities.Models
 {
+    [DisplayColumn("Titulo")]
     public class Libro
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -22,10 +24,12 @@ namespace Biblioteca.Entities.Models
         public DateTime FechaPublicacion { get; set; }
 
         [Required]
+        [DisplayName("Autor")]
         public int? AutorId { get; set; }
         public Autor? Autor { get; set; }
 
         [Required]
+        [DisplayName("Categoria")]
         public int? CategoriaId { get; set; }
         public Categoria? Categoria { get; set; }
     }

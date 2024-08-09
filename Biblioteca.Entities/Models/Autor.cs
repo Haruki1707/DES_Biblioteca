@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace Biblioteca.Entities.Models
 {
+    [DisplayColumn("Nombre")]
     public class Autor
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -18,5 +20,7 @@ namespace Biblioteca.Entities.Models
         [Required]
         [StringLength (100, MinimumLength = 2)]
         public string Apellido { get; set; }
+
+        public ICollection<Libro>? Libros { get; set; }
     }
 }
